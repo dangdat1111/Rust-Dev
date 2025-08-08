@@ -8,7 +8,7 @@ fn main() {
     // let mut y = mutable variable
     let mut y = 5;
     println!("The value of y is: {y}");
-    y = 6;
+    y = "6";
     println!("The value of y is: {y}");
 
     y = y +1;
@@ -24,7 +24,7 @@ fn main() {
     let spaces = spaces.len();
     println!("The number of spaces is: {spaces}");
 
-    //let mut spaces = "   ";
-    //spaces = spaces.len();
-    //println!("The number of spaces is: {spaces}");
+    let mut spaces = "   ";
+    spaces = spaces.len();
+    println!("The number of spaces is: {spaces}");
 }
