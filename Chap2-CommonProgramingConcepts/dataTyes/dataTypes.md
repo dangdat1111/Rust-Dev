@@ -136,3 +136,72 @@ Các kiểu hợp thành có thể nhóm nhiều giá trị lại thành một k
 
 Hiểu rõ sự khác biệt giữa kiểu vô hướng và kiểu hợp thành là rất quan trọng để viết mã Rust hiệu quả và an toàn. Việc này giúp bạn chọn đúng kiểu dữ liệu cho từng tình huống, tận dụng được tính an toàn bộ nhớ và hiệu suất của Rust.
 
+Đúng vậy, bạn nên sử dụng **`Vec` (Vector)** thay vì mảng (`array`) khi bạn cần một tập hợp các giá trị có thể thay đổi kích thước. Dưới đây là những điểm chính về `Vec` và cách sử dụng nó trong Rust.
+
+### `Vec` là gì?
+
+**`Vec<T>`** là một kiểu dữ liệu **mảng có thể thay đổi kích thước**, được cung cấp bởi thư viện chuẩn của Rust. Nó còn được gọi là "vector".
+
+  * **Có thể thay đổi kích thước:** Không giống như mảng, bạn có thể thêm hoặc bớt các phần tử trong `Vec` sau khi nó đã được tạo.
+  * **Cùng kiểu dữ liệu:** Tương tự như mảng, tất cả các phần tử trong `Vec` đều phải có cùng kiểu dữ liệu. Kiểu dữ liệu này được chỉ định bởi tham số generic `T`. Ví dụ, `Vec<i32>` là một vector chứa các số nguyên 32-bit.
+  * **Lưu trữ trên heap:** `Vec` lưu trữ dữ liệu của nó trên heap (vùng nhớ động), cho phép nó có thể thay đổi kích thước. Điều này khác với mảng, được lưu trữ trên stack (vùng nhớ tĩnh).
+
+### Cách tạo và sử dụng `Vec`
+
+Có hai cách phổ biến để tạo một vector:
+
+1.  **Sử dụng macro `vec!`:** Đây là cách dễ nhất để tạo một vector với các giá trị ban đầu.
+
+    ```rust
+    let v = vec![1, 2, 3]; // Rust tự động suy ra kiểu là Vec<i32>
+    let names = vec!["Alice", "Bob", "Charlie"]; // Kiểu là Vec<&str>
+    ```
+
+2.  **Sử dụng `Vec::new()`:** Phương thức này tạo một vector rỗng. Bạn phải khai báo kiểu dữ liệu một cách rõ ràng.
+
+    ```rust
+    let mut v: Vec<i32> = Vec::new();
+    ```
+
+-----
+
+### Các thao tác phổ biến với `Vec`
+
+  * **Thêm phần tử:** Sử dụng phương thức `push()` để thêm một phần tử vào cuối vector.
+
+    ```rust
+    let mut v = vec![10, 20];
+    v.push(30);
+    // v bây giờ là [10, 20, 30]
+    ```
+
+  * **Truy cập phần tử:** Bạn có thể truy cập các phần tử bằng cách sử dụng chỉ mục (`index`) trong dấu ngoặc vuông `[]`.
+
+    ```rust
+    let v = vec![1, 2, 3];
+    let third_element = v[2]; // third_element có giá trị 3
+    ```
+
+    > **Lưu ý:** Nếu bạn truy cập một chỉ mục nằm ngoài phạm vi của vector, chương trình sẽ gặp lỗi "panic" và dừng lại. Để truy cập an toàn hơn, bạn có thể sử dụng phương thức `get()`, nó sẽ trả về `Some(&value)` nếu chỉ mục hợp lệ và `None` nếu không hợp lệ.
+
+  * **Xóa phần tử:** Sử dụng phương thức `pop()` để xóa và trả về phần tử cuối cùng của vector.
+
+    ```rust
+    let mut v = vec![10, 20, 30];
+    let last_element = v.pop(); // last_element là Some(30)
+    // v bây giờ là [10, 20]
+    ```
+
+  * **Lặp qua các phần tử:**
+
+    ```rust
+    let v = vec![100, 32, 57];
+    for number in &v {
+        println!("{}", number);
+    }
+    ```
+
+Nếu bạn muốn tìm hiểu sâu hơn về cách sử dụng Vec trong Rust, video này sẽ cung cấp một hướng dẫn chi tiết.
+
+[Use the Rust Vec Type for Dynamically Expanding Arrays](https://www.youtube.com/watch?v=VIBbzFQcedU)
+http://googleusercontent.com/youtube_content/0
