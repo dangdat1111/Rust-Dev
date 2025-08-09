@@ -87,4 +87,3 @@ Các kiểu hợp thành có thể nhóm nhiều giá trị lại thành một k
 
 Hiểu rõ sự khác biệt giữa kiểu vô hướng và kiểu hợp thành là rất quan trọng để viết mã Rust hiệu quả và an toàn. Việc này giúp bạn chọn đúng kiểu dữ liệu cho từng tình huống, tận dụng được tính an toàn bộ nhớ và hiệu suất của Rust.
 
-Bạn có muốn đi sâu hơn vào một kiểu dữ liệu cụ thể nào không, hoặc có câu hỏi nào khác về cách chúng được sử dụng trong Rust không?
