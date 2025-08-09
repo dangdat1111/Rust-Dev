@@ -148,6 +148,7 @@ Hiểu rõ sự khác biệt giữa kiểu vô hướng và kiểu hợp thành 
 
 ### Cách tạo và sử dụng `Vec`
 
+
 Có hai cách phổ biến để tạo một vector:
 
 1.  **Sử dụng macro `vec!`:** Đây là cách dễ nhất để tạo một vector với các giá trị ban đầu.
