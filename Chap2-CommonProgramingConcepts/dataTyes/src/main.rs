@@ -76,9 +76,25 @@ fn main() {
     }
 
     // Use the Rust Vec type for dynamic arrays
+    let mut my_ints: Vec<i32> = Vec::new();
+    my_ints.push(30);
+    my_ints.push(40);
+    my_ints.push(50);
+    my_ints.push(60);
+    println!("vector my_ints: {:?}", my_ints);
+    println!("vector my_ints size: {:?}", my_ints.len());
+    println!("vector my_ints capacity: {:?}", my_ints.capacity());
 
 
+    println!("First item in my_ints: {}", my_ints[0]);
+    println!("First item in my_ints: {}", my_ints[1]);
+    println!("First item in my_ints: {}", my_ints[2]);
+    println!("first item in my_ints: {}", my_ints[3]);
+    //println!("First item in my_ints: {:?}", my_ints[0..3]);
 
+    println!("slice: {:?}", &(&my_ints).as_slice()[1..3]); // Slice of the vector
+    println!("first intem in my_ints: {:?}", my_ints.get(1)); // Lấy phần tử đầu tiên của
+    // vector
 
 
 
