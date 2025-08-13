@@ -96,6 +96,18 @@ fn main() {
     println!("first intem in my_ints: {:?}", my_ints.get(1)); // Lấy phần tử đầu tiên của
     // vector
 
+    //vector string
+    let first_name = vec!["Optimus", "Prime", "Bumblebee", "Megatron"];
+    println!("First name: {:?}", first_name[0]); // Truy cập phần tử đầu tiên của vector chuỗi
+    println!("First name: {}", first_name[0]); // Truy cập phần tử đầu tiên của vector chuỗi
+
+    let second_name: Vec<&str> = vec!["Optimus", "Prime", "Bumblebee", "Megatron"];
+    println!("Second name: {:?}", second_name); // Truy cập phần tử thứ hai của vector chuỗi
+
+    for sec in &second_name {
+        println!("Second name: {}", sec); // Duyệt qua các phần tử trong vector chuỗi
+    }
+
 
 
 
