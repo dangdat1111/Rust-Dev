@@ -102,16 +102,25 @@ fn main() {
     println!("First name: {}", first_name[0]); // Truy cập phần tử đầu tiên của vector chuỗi
 
     let second_name: Vec<&str> = vec!["Optimus", "Prime", "Bumblebee", "Megatron"];
-    println!("Second name: {:?}", second_name); // Truy cập phần tử thứ hai của vector chuỗi
 
     for sec in &second_name {
         println!("Second name: {}", sec); // Duyệt qua các phần tử trong vector chuỗi
     }
 
+    println!("Second name first element: {:?}", second_name);
 
 
+    #[derive(Debug)]
+    struct Name {
+        first: String,
+        last: String,
+    }
 
-
+    let name = Name {
+        first : String::from("Optimus"),
+        last: String::from("Prime"),
+    };
+    println!("Name: {:?}", name);
 
 
 
