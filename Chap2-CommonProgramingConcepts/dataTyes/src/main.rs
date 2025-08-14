@@ -123,11 +123,4 @@ fn main() {
     println!("Name: {:?}", name);
 
 
-
-
-
-
-
-
-
 }
