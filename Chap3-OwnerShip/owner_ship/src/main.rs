@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    // stack and heap
+
 }
