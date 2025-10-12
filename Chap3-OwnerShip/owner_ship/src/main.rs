@@ -1,6 +1,10 @@
 fn main() {
     // stack and heap
-    let s = "hello";
-    println!("{:?}", s);
+
+    let  s1 = String::from("dat dep zai");
+    let s2 = s1;
+
+    println!("{s2}, world");
+
 
 }
