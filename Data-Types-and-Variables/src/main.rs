@@ -74,6 +74,22 @@ fn main() {
     let mut a = 10;
     let mut b = 20;
     (a,b) = (b,a);
-    println!("{}", a); //20
-    println!("{}", b); //10
+    // println!("{}", a); //20
+    // println!("{}", b); //10
+
+    //======================================================================
+    //Array
+    //khai bao Array
+    let a = [1,2,3,4,5];
+    let b: [i32; 5]= [1,2,3,4,5];
+    // Cách 3: Khởi tạo lặp lại giá trị
+    let c = [0; 100];        // mảng 100 phần tử, tất cả đều là 0
+    let d = ["hello"; 10];  // 10 phần tử, mỗi cái là "hello"
+    // Cách 4: Suy luận kiểu
+    let fruits = ["apple", "banana", "orange"];  // &[&str; 3]
+    println!("{:?}", a);
+    // Quan trọng: Rust kiểm tra chỉ số mảng tại runtime, nếu sai → chương trình panic (crash) ngay lập tức (trong debug mode)
+    println!("{}", a[1]);
+    println!("{:?}", a.get(3));
+
 }
