@@ -126,7 +126,7 @@ fn main() {
 
 Nếu bạn muốn, mình có thể vẽ sơ đồ hoặc tạo thêm ví dụ nâng cao về **Borrowing**, **Mutable Borrowing**, hoặc **Ownership với Struct**.
 
-Tuyệt! Mình sẽ trình bày phần nâng cao hơn về:
+
 
 1. **Borrowing (mượn dữ liệu)**
 2. **Mutable Borrowing (mượn dữ liệu có thể thay đổi)**

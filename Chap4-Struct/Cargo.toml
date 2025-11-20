@@ -1,0 +1,7 @@
+[package]
+name = "Chap4-Struct"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ssh = "0.1.4"
