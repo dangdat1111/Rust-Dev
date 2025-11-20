@@ -87,9 +87,61 @@ fn main() {
     let d = ["hello"; 10];  // 10 phần tử, mỗi cái là "hello"
     // Cách 4: Suy luận kiểu
     let fruits = ["apple", "banana", "orange"];  // &[&str; 3]
-    println!("{:?}", a);
+    // println!("{:?}", a);
     // Quan trọng: Rust kiểm tra chỉ số mảng tại runtime, nếu sai → chương trình panic (crash) ngay lập tức (trong debug mode)
-    println!("{}", a[1]);
-    println!("{:?}", a.get(3));
+    // println!("{}", a[1]);
+    // println!("{:?}", a.get(3));
+
+    //======================================================================
+    // Slices
+    // Cách tạo slice (từ array hoặc Vec)
+    // cách lấy slices
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+    let full       = &arr[..];      // toàn bộ: [1,2,3,4,5,6,7,8]
+    let from_2     = &arr[2..];     // từ index 2 → cuối: [3,4,5,6,7,8]
+    let to_5       = &arr[..5];     // từ đầu đến trước index 5: [1,2,3,4,5]
+    let middle     = &arr[2..6];    // từ 2 đến trước 6: [3,4,5,6]
+    let single     = &arr[3..4];    // chỉ 1 phần tử: [4]
+
+    // Dùng với Vec (giống hệt)
+    let vec = vec![10, 20, 30, 40];
+    let slice: &[i32] = &vec[1..3]; // [20, 30]
+
+    // Slice với String / &str (cực kỳ quan trọng!)
+    let s = String::from("Xin chào Rust");
+
+    // &str chính là string slice!
+    let hello: &str = &s[0..8];   // "Xin chào"
+    let rust: &str  = &s[9..13];  // "Rust"
+
+    // Cú pháp ngắn gọn (Rust tự hiểu)
+    let hello = &s[..8];
+    let rust  = &s[9..];
+
+    // Toàn bộ string
+    let whole: &str = &s[..];
+    // Lưu ý chết người khi cắt tiếng Việt
+    let s = "Tôi yêu Rust ❤️";
+    // let bad = &s[0..2];     // panic! vì cắt giữa ký tự UTF-8
+    let good = &s[0..3];    // "Tôi" → OK
+    println!("{:?}", good);
+
+    // Hàm nhận slice (linh hoạt nhất có thể)
+    // Hàm này nhận ĐƯỢC: array, Vec, slice, phần của String...
+    fn print_numbers(data: &[i32]) {
+        for (i, n) in data.iter().enumerate() {
+            println!("{}: {}", i, n);
+        }
+    }
+
+
+    let arr = [5, 10, 15];
+    let vec = vec![1, 2, 3, 4, 5];
+    let slice = &vec[1..4];
+
+    print_numbers(&arr);      // OK
+    print_numbers(&vec);      // OK
+    print_numbers(slice);    // OK
+    print_numbers(&vec[..]);  // OK
 
 }
